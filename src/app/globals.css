@@ -1,0 +1,112 @@
+:root {
+  /* Colors */
+  --color-primary-dark: #221D4A;
+  --color-primary-mid: #3B3471;
+  --color-primary-light: #E6E7F5;
+  --color-bg-main: #F7F7FB;
+  --color-bg-surface: #FFFFFF;
+  --color-text-primary: #1E2130;
+  --color-text-on-dark: #F7F7FB;
+  --color-text-muted: #6A6F85;
+  --color-accent-yellow: #F2C94C;
+  --color-border-subtle: #D3D6EC;
+  
+  --color-feedback-success: #27AE60;
+  --color-feedback-error: #EB5757;
+  --color-feedback-warning: #F2C94C;
+  --color-feedback-info: #2F80ED;
+  --color-alert-emergency: #C22026;
+  --color-alert-emergency-dark: #8E151A;
+
+  /* Typography Extracted from JSON */
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 32px;
+  --font-size-3xl: 40px;
+  --font-size-4xl: 52px;
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.7;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --radius-full: 9999px;
+
+  /* Elevation */
+  --elevation-none: none;
+  --elevation-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --elevation-md: 0 4px 10px rgba(0,0,0,0.12);
+  --elevation-lg: 0 10px 30px rgba(0,0,0,0.18);
+
+  /* Transitions */
+  --transition-fast: 150ms ease-out;
+  --transition-normal: 250ms ease-out;
+  --transition-slow: 400ms ease-out;
+
+  /* Z-Index */
+  --z-base: 0;
+  --z-header: 100;
+  --z-overlay: 1000;
+  --z-modal: 1100;
+  --z-floating: 1200;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg-main);
+  color: var(--color-text-primary);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Base Form Inputs reset globally if we need them, but we'll use components */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--color-primary-mid);
+  box-shadow: 0 0 0 1px rgba(59,52,113,0.4);
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

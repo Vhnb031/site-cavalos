@@ -1,0 +1,23 @@
+/* Arquivo para definir keyframes e classes de animação JS baseadas no JSON */
+
+.animate-fadeInUp-out {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.animate-fadeInUp-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
+}
+
+.animate-scaleIn-out {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.animate-scaleIn-in {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
+}

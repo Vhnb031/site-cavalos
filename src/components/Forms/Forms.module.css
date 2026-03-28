@@ -1,0 +1,127 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.formGroup label {
+  font-family: var(--font-inter);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.input, .textarea {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-subtle);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-md);
+  background-color: var(--color-bg-surface);
+  font-family: var(--font-inter);
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.submitBtn {
+  margin-top: var(--spacing-md);
+  width: 100%;
+}
+
+.successMessage {
+  background: var(--color-feedback-success);
+  color: white;
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  text-align: center;
+  font-weight: var(--font-weight-medium);
+}
+
+/* Floating Button & Modal */
+.floatingButton {
+  position: fixed;
+  bottom: var(--spacing-lg);
+  right: var(--spacing-lg);
+  z-index: var(--z-floating);
+  background-color: var(--color-alert-emergency);
+  color: var(--color-text-on-dark);
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-family: var(--font-inter);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-md);
+  box-shadow: var(--elevation-lg);
+  cursor: pointer;
+  transition: transform var(--transition-fast), background-color var(--transition-normal);
+}
+
+.floatingButton:hover {
+  background-color: var(--color-alert-emergency-dark);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md);
+  animation: fadeIn var(--transition-fast) forwards;
+}
+
+.modalContent {
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  box-shadow: var(--elevation-lg);
+}
+
+.modalContent h2 {
+  color: var(--color-alert-emergency);
+  margin-bottom: var(--spacing-xs);
+  font-family: var(--font-playfair);
+}
+
+.emergencyDesc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-lg);
+}
+
+.closeBtn {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  background: none;
+  border: none;
+  font-size: var(--font-size-xl);
+  cursor: pointer;
+  color: var(--color-text-muted);
+}
+
+.closeBtn:hover {
+  color: var(--color-text-primary);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

@@ -1,0 +1,55 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: var(--z-header);
+  background-color: transparent;
+  transition: background-color var(--transition-normal), box-shadow var(--transition-normal);
+  padding: var(--spacing-md) 0;
+}
+
+.scrolled {
+  background-color: var(--color-primary-dark);
+  box-shadow: var(--elevation-md);
+  padding: var(--spacing-sm) 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo span {
+  font-family: var(--font-playfair);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-on-dark);
+}
+
+.nav {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.navLink {
+  color: var(--color-text-on-dark);
+  font-family: var(--font-inter);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  transition: color var(--transition-fast);
+}
+
+.navLink:hover {
+  color: var(--color-accent-yellow);
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none; /* Em mobile podíamos fazer humburger menu */
+  }
+}

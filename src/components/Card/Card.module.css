@@ -1,0 +1,16 @@
+.card {
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--elevation-md);
+  border: 1px solid var(--color-border-subtle);
+  overflow: hidden;
+}
+
+.base {
+  background-color: var(--color-bg-surface);
+}
+
+.surfaceLight {
+  background-color: var(--color-primary-light);
+  color: var(--color-text-primary);
+}
