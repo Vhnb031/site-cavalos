@@ -1,0 +1,178 @@
+.section {
+  background-color: var(--color-bg-main);
+  padding: var(--spacing-3xl) 0;
+  overflow: hidden;
+}
+
+.header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto var(--spacing-2xl);
+  padding: 0 var(--spacing-lg);
+}
+
+.heading {
+  font-family: var(--font-playfair);
+  font-size: var(--font-size-3xl);
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-sm);
+}
+
+.subheading {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+}
+
+/* Container externo com fade nas bordas */
+.trackOuter {
+  position: relative;
+  width: 100%;
+  /* Fade lateral para dar efeito de continuidade */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+/* Pausa ao hover em qualquer card */
+.trackOuter:hover .track {
+  animation-play-state: paused;
+}
+
+/* Track infinito — 20 cards × 2 cópias */
+.track {
+  display: flex;
+  gap: var(--spacing-lg);
+  width: max-content;
+  animation: scrollLeft 90s linear infinite;
+  padding: var(--spacing-md) 0 var(--spacing-lg); /* espaço para sombra */
+}
+
+@keyframes scrollLeft {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* -50% = exatamente 1 cópia */
+}
+
+/* Respeitar prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 0 var(--spacing-lg);
+  }
+}
+
+/* ── Card ── */
+.card {
+  flex-shrink: 0;
+  width: 260px;
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: var(--elevation-sm);
+  overflow: hidden;
+  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  box-shadow: var(--elevation-lg);
+  transform: translateY(-4px);
+}
+
+/* Avatar */
+.avatarWrapper {
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary-mid));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avatarInitials {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-playfair);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent-yellow);
+  letter-spacing: 0.02em;
+}
+
+/* Corpo */
+.cardBody {
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  flex: 1;
+}
+
+.memberName {
+  font-family: var(--font-playfair);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-dark);
+  line-height: var(--line-height-tight);
+}
+
+.credential {
+  font-family: var(--font-inter);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary-mid);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.specialty {
+  font-family: var(--font-inter);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-relaxed);
+  flex: 1;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: auto;
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.contactLink {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  font-family: var(--font-inter);
+  transition: color var(--transition-fast);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contactLink:hover {
+  color: var(--color-primary-mid);
+}
